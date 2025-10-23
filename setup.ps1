@@ -43,12 +43,11 @@ catch {
 }
 
 $regPath = "HKEY_CURRENT_USER\Software\Microsoft\Windows\CurrentVersion\Explorer\FileExts\.cso"
-$exportFile = "$env:USERPROFILE\Desktop\Backup_CSO_UserChoice.reg"
 
 # Export the key (using reg.exe)
-reg export "`"$regPath`"" "`"$exportFile`"" /y
+reg export "HKEY_CURRENT_USER\Software\Microsoft\Windows\CurrentVersion\Explorer\FileExts\.7z" "./backup_fileexts_cso.reg"
 if ($LASTEXITCODE -eq 0) {
-    Write-Host "Exported fileexts.cso key to $exportFile in case anything goes wrong."
+    Write-Host "Exported fileexts.cso key to ./backup_fileexts_cso.reg in case anything goes wrong."
 } else {
     Write-Host "Export failed (code $LASTEXITCODE)"
 }
