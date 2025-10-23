@@ -30,7 +30,7 @@ catch {
             
             # After this line, you should check if the install was successful
             if ($err) {
-               echo "We failed a third time at downloiading the 'cdrtools' dependency. Feel free to open an issue on our GitHub repository at: [...]. If you do open an issue, copy&paste this information to the developers:`n``````"
+               echo "We failed a third time at downloiading the 'cdrtools' dependency. Feel free to open an issue on our GitHub repository at: https://github.com/cornusandu/ISOConvert/issues. If you do open an issue, copy&paste this information to the developers:`n``````"
                echo "`t`tSTDOUT"
                echo $out
                echo "`t`tSTDERR"
@@ -53,4 +53,12 @@ if ($LASTEXITCODE -eq 0) {
     Write-Error "Export failed (code $LASTEXITCODE)"
 }
 
-echo "Automatic setup completed. Please manually load all the .reg (registry) files in the local directory to finish installation."
+mkdir -Force "C:\Program Files\ISOCONVERT"
+
+echo "Automatic setup completed. Please do the following to complete the installation:"
+echo "1. Copy and paste all the executables from ./output into the C:\Program Files\ISOCONVERT folder we made for you"
+echo "2. Consecutivelly double-click on all the .reg (registry) files in the local directory to manually load them"
+echo "3. Use the tool to make a .iso and .cso, and right click on the folder, .iso and .cso files to make sure the utility is showing up correctly"
+echo "4. Once you're done, come back and press any key to exit"
+
+pause
