@@ -42,7 +42,7 @@ catch {
     }
 }
 
-$regPath = "HKCU:\Software\Microsoft\Windows\CurrentVersion\Explorer\FileExts\.cso"
+$regPath = "HKEY_CURRENT_USER\Software\Microsoft\Windows\CurrentVersion\Explorer\FileExts\.cso"
 $exportFile = "$env:USERPROFILE\Desktop\Backup_CSO_UserChoice.reg"
 
 # Export the key (using reg.exe)
